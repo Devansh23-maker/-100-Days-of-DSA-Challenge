@@ -8,17 +8,16 @@ class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         if root is None:
             return True
-        return self.isMirror(root.left, root.right)
+        return self.isMirror(root.left, root.right)   # yaha p=root.left, q=root.right BANEGA
     
     def isMirror(self, p, q):
-        
         if p is None and q is None:
             return True
-        
         
         if p is None or q is None:
             return False
         
         if p.val != q.val:
             return False
+        
         return self.isMirror(p.left, q.right) and self.isMirror(p.right, q.left)
